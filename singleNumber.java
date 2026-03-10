@@ -2,16 +2,12 @@ import java.util.Arrays;
 
 public class singleNumber {
     public static int singleNumber(int arr[]) {
-        int i = 0;
-        Arrays.sort(arr);
-        while (i < arr.length) {
-            if (i != arr.length - 1 && arr[i] == arr[i + 1]) {
-                i = i + 2;
-            } else {
-                return arr[i];
-            }
-        }
-        return arr[i];
+       int XOR=0;
+       for(int e:arr)
+       {
+        XOR=XOR^e;
+       }
+       return XOR;
     }
 
     public static void main(String[] args) {
