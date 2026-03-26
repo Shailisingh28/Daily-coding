@@ -12,12 +12,21 @@ public class majorityElement {
                 count--;
             }
         }
-        return candidate;
+        count = 0;
+        for (int e : arr) {
+            if (candidate == e) {
+                count++;
+            }
+        }
+        if (count > arr.length / 2) {
+            return candidate;
+        }
+
+        return -1;
     }
 
     public static void main(String[] args) {
-        int arr[] = { 3, 2, 3 };
+        int arr[] = { 3, 3, 2 };
         System.out.println(majorityElement(arr));
-
     }
 }
