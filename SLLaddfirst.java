@@ -67,6 +67,52 @@ public class SLLaddfirst {
         size++;
     }
 
+    public void deleteatfirst() {
+        if (head == null) {
+            return;
+        }
+        head = head.next;
+        size--;
+    }
+
+    public void deleteatlast() {
+        if (head == null) {
+            return;
+        }
+        if (head.next == null) {
+            head = null;
+            size--;
+            return;
+        }
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        size--;
+    }
+
+    public void deleteatanyposition(int i) {
+        if (i < 0 || i >= size) {
+            System.out.println("invalid index passed");
+            System.exit(0);
+            return;
+        }
+        if (i == 0) {
+            deleteatfirst();
+            return;
+        } else if (i == size - 1) {
+            deleteatlast();
+            return;
+        }
+        Node temp = head;
+        for (int j = 0; j < i - 1; j++) {
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        size--;
+    }
+
     public void display() {
         if (head == null) {
             System.out.println("List is empty");
@@ -86,7 +132,11 @@ public class SLLaddfirst {
         list.addlast(2);
         list.addlast(1);
         list.addlast(4);
-        list.addatanyposition(5, 8);
+        list.deleteatanyposition(2);
+        list.deleteatfirst();
+        list.deleteatlast();
+        list.deleteatanyposition(0);
+        // list.addatanyposition(5, 8);
         list.display();
     }
 }
