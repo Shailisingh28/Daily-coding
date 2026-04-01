@@ -21,6 +21,14 @@ public class insertAtHead {
         return newnNode;
     }
 
+    public static Node deleteHead(Node head) {
+        if (head == null) {
+            return head;
+        }
+        head = head.next;
+        return head;
+    }
+
     public void print() {
         if (head == null) {
             System.out.println("List is empty");
@@ -36,9 +44,10 @@ public class insertAtHead {
 
     public static void main(String[] args) {
         insertAtHead list = new insertAtHead();
-        // list.head = list.insertatfirst(1, list.head);
-        // list.head = list.insertatfirst(2, list.head);
+        list.head = list.insertatfirst(1, list.head);
+        list.head = list.insertatfirst(2, list.head);
         list.head = list.insertatfirst(3, list.head);
+        list.head = list.deleteHead(list.head);
         list.print();
     }
 }
