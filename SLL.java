@@ -1,4 +1,4 @@
-public class SLLaddfirst {
+public class SLL {
     Node head;
     int size = 0;
 
@@ -127,7 +127,7 @@ public class SLLaddfirst {
     }
 
     public static void main(String[] args) {
-        SLLaddfirst list = new SLLaddfirst();
+        SLL list = new SLL();
         list.addlast(3);
         list.addlast(2);
         list.addlast(1);
