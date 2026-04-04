@@ -1,3 +1,4 @@
+
 public class SLL {
     Node head;
     int size = 0;
@@ -126,17 +127,27 @@ public class SLL {
         System.out.print("null");
     }
 
+    public void displayreverse(Node head) {
+        if (head == null) {
+            return;
+        }
+        displayreverse(head.next);
+        System.out.print(head.val + "->");
+    }
+
     public static void main(String[] args) {
         SLL list = new SLL();
         list.addlast(3);
         list.addlast(2);
         list.addlast(1);
-        list.addlast(4);
-        list.deleteatanyposition(2);
-        list.deleteatfirst();
-        list.deleteatlast();
-        list.deleteatanyposition(0);
+        // list.addlast(4);
+        // list.deleteatanyposition(2);
+        // list.deleteatfirst();
+        // list.deleteatlast();
+        // list.deleteatanyposition(0);
         // list.addatanyposition(5, 8);
         list.display();
+        System.out.println();
+        list.displayreverse(list.head);
     }
 }

@@ -23,6 +23,34 @@ public class DLList {
         return head;
     }
 
+    public node deleteHead(node head) {
+        if (head == null) {
+            return head;
+        }
+        head = head.next;
+        if (head != null) {
+            head.pre = null;
+        }
+        return head;
+    }
+
+    public node reverseDLL(node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        node temp = head;
+        node pre = null;
+
+        while (temp != null) {
+            pre = temp.pre;
+            temp.pre = temp.next;
+            temp.next = pre;
+            temp = temp.pre;
+        }
+        return pre.pre;
+
+    }
+
     public void display() {
         if (head == null) {
             System.out.println("List is empty");
@@ -43,6 +71,8 @@ public class DLList {
         head = list.insertBeforeHead(head, 2);
         // head = list.insertBeforeHead(head, 5);
         head = list.insertBeforeHead(head, val);
+        // head = list.deleteHead(head);
+        head = list.reverseDLL(head);
         list.display();
     }
 }
