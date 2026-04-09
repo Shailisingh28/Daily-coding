@@ -42,10 +42,10 @@ public class deleteMiddle {
     public static void main(String[] args) {
         deleteMiddle obj = new deleteMiddle();
         obj.head = new Node(1);
-        // obj.head.next = new Node(2);
-        // obj.head.next.next = new Node(3);
-        // obj.head.next.next.next = new Node(4);
-        // obj.head.next.next.next.next = new Node(5);
+        obj.head.next = new Node(2);
+        obj.head.next.next = new Node(3);
+        obj.head.next.next.next = new Node(4);
+        obj.head.next.next.next.next = new Node(5);
         obj.head = obj.deleteMiddle(obj.head);
         obj.display();
 
