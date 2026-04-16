@@ -31,7 +31,6 @@ public class copyRandomList {
         }
         temp = head;
         Node dummy = new Node(-1);
-        // dummy.next=temp.next;
         Node res = dummy;
         while (temp != null) {
             Node copy = temp.next;
