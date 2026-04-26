@@ -26,7 +26,7 @@ public class subsetsWithDup {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 2, 3 };
+        int arr[] = { 1, 1, 2 };
         System.out.println(subsetsWithDup(arr));
     }
 }
