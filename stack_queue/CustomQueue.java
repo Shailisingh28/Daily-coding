@@ -36,6 +36,22 @@ public class CustomQueue {
         return removed;
     }
 
+    public int front() {
+        if (end == -1) {
+            System.out.println("Empty Stack");
+            return -1;
+        }
+        return data[0];
+    }
+
+    public int last() {
+        if (end == -1) {
+            System.out.println("Empty Stack");
+            return -1;
+        }
+        return data[data.length - 1];
+    }
+
     public static void main(String[] args) {
         CustomQueue queue = new CustomQueue(5);
         queue.add(1);
