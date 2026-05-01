@@ -16,7 +16,7 @@ public class intro {
         // System.out.println(stack.pop());
         // System.out.println(stack.pop());
 
-        Queue queue = new LinkedList<>();
+        Queue<Integer> queue = new LinkedList<>();
         queue.add(1);
         queue.add(2);
         queue.add(3);
