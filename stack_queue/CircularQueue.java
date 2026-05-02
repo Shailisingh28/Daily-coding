@@ -7,17 +7,17 @@ public class CircularQueue {
     int end = 0;
     int size = 0;
 
-    public CircularQueue() {
+    CircularQueue() {
         this(default_size);
     }
 
-    public CircularQueue(int size) {
+    CircularQueue(int size) {
         data = new int[size];
     }
 
     public boolean add(int element) {
-        if (data.length == size) {
-            System.out.println("Queue is full");
+        if (size == data.length) {
+            System.out.println("Full");
             return false;
         }
         data[end++] = element;
@@ -27,13 +27,30 @@ public class CircularQueue {
     }
 
     public int remove() {
-        if (data.length == 0) {
-            System.out.println("Queue is empty");
+        if (size == 0) {
+            System.out.println("Empty queue");
             return -1;
         }
         int removed = data[front++];
-        front = front % size;
+        front = front % data.length;
         size--;
         return removed;
+    }
+
+    public static void main(String[] args) {
+        CircularQueue queue = new CircularQueue(4);
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+
+        queue.remove();
+        queue.add(5);
+
+        System.out.println(queue.remove());
+        System.out.println(queue.remove());
+        System.out.println(queue.remove());
+        System.out.println(queue.remove());
+
     }
 }
