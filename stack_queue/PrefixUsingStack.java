@@ -2,7 +2,7 @@ package stack_queue;
 
 import java.util.Stack;
 
-public class PostfixUsingStack {
+public class PrefixUsingStack {
     public static int precedence(char ch) {
         if (ch == '+' || ch == '-') {
             return 1;
@@ -26,7 +26,7 @@ public class PostfixUsingStack {
         return "";
     }
 
-    public static String PostfixUsingStack(String str) {
+    public static String PrefixUsingStack(String str) {
         Stack<String> val = new Stack<>();
         Stack<Character> op = new Stack<>();
         for (char ch : str.toCharArray()) {
@@ -65,6 +65,6 @@ public class PostfixUsingStack {
 
     public static void main(String[] args) {
         String str = "9-(5+3)*4/6";
-        System.out.println(PostfixUsingStack(str));
+        System.out.println(PrefixUsingStack(str));
     }
 }
