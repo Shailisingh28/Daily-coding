@@ -26,7 +26,7 @@ public class celebrity {
                 }
             }
         }
-        return 1;
+        return stack.peek();
 
     }
 
