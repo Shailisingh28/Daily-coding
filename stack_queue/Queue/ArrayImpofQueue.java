@@ -5,6 +5,7 @@ public class ArrayImpofQueue {
     static int deafult_size = 10;
     int front = -1;
     int rear = 0;
+    int size = 0;
 
     ArrayImpofQueue() {
         this(deafult_size);
@@ -19,12 +20,14 @@ public class ArrayImpofQueue {
             throw new RuntimeException("Queue is full");
         }
         data[++front] = element;
+        size++;
     }
 
     public int remove() {
         if (rear > front) {
             throw new RuntimeException("Queue is empty");
         }
+        size--;
         return data[rear++];
     }
 
@@ -41,12 +44,11 @@ public class ArrayImpofQueue {
         queue.add(2);
         queue.add(3);
         queue.add(4);
-
+        System.out.println(queue.size);
         // System.out.println(queue.remove());
         // System.out.println(queue.remove());
         // System.out.println(queue.remove());
         // System.out.println(queue.remove());
-        System.out.println(queue.peek());
 
     }
 }
