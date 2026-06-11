@@ -7,9 +7,10 @@ public class floorSqrt {
         int mid;
         while (left <= right) {
             mid = left + (right - left) / 2;
-            if (mid * mid == n)
+            long sqr = (long) mid * mid;
+            if (sqr == n)
                 return mid;
-            else if (mid * mid > n)
+            else if (sqr > n)
                 right = mid - 1;
             else {
                 left = mid + 1;
@@ -19,7 +20,7 @@ public class floorSqrt {
     }
 
     public static void main(String[] args) {
-        int n = 36;
+        int n = 0;
         System.out.println(floorSqrt(n));
     }
 }
