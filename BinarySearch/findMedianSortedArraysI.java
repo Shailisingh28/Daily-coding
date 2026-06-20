@@ -16,7 +16,7 @@ public class findMedianSortedArraysI {
             int r2 = partition_second == largest.length ? Integer.MAX_VALUE : largest[partition_second];
             if (l1 <= r2 && l2 <= r1) {
                 if (total % 2 == 0) {
-                    return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+                    return ((double) Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
                 }
                 return Math.max(l1, l2);
             } else if (l1 > r2) {
