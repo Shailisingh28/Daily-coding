@@ -1,22 +1,20 @@
 package Array;
 
+import java.util.HashMap;
+
 public class longestSubarray {
     public static int longestSubarray(int arr[], int k) {
-        int left = 0;
-        int right = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int prefix = 0;
         int max = 0;
-        int sum = 0;
-        while (right < arr.length) {
-            if (sum + arr[right] <= k) {
-                sum += arr[right];
-                if (sum == k) {
-                    max = Math.max(max, right - left + 1);
-                }
-                right++;
-            } else {
-                sum = sum - arr[left];
-                left++;
+        for (int i = 0; i < arr.length; i++) {
+            prefix += arr[i];
+            int remaining = prefix - k;
+            if (map.containsKey(remaining)) {
+                max = Math.max(max, i - map.get(remaining));
             }
+            map.putIfAbsent(prefix, i);
         }
         return max;
     }
