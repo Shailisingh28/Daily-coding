@@ -13,13 +13,13 @@ public class searchII {
                 left++;
                 right--;
             } else if (arr[left] <= arr[mid]) {
-                if (arr[left] <= target && target <= arr[mid]) {
+                if (arr[left] <= target && target < arr[mid]) {
                     right = mid - 1;
                 } else {
                     left = mid + 1;
                 }
             } else {
-                if (arr[mid] <= target && target <= arr[right]) {
+                if (arr[mid] < target && target <= arr[right]) {
                     left = mid + 1;
                 } else {
                     right = mid - 1;
